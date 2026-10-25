@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHICAS BIEN 💕 | Accesorios, Experiencias & Comunidad</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts Google: Playfair Display + Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        roseSoft: '#fdf2f4',
+                        roseAccent: '#f4a6b7',
+                        roseDeep: '#e07a93',
+                        goldMetallic: '#d4af37',
+                        goldDark: '#b8860b',
+                        creamBg: '#faf8f5',
+                        charcoal: '#2d2528'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #faf8f5;
+            color: #2d2528;
+        }
+        .font-serif-title {
+            font-family: 'Playfair Display', serif;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #aa7c11 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .pink-gold-hero {
+            background: linear-gradient(135deg, #fde2e4 0%, #fff0f3 40%, #f7d6e0 70%, #fce1e4 100%);
+        }
+        .pink-card-glow:hover {
+            box-shadow: 0 10px 30px rgba(244, 166, 183, 0.25);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #faf8f5;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #f4a6b7;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4af37;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-roseAccent selection:text-white">
+
+    <!-- ANNOUNCEMENT BAR -->
+    <div class="bg-gradient-to-r from-roseDeep via-roseAccent to-goldMetallic text-white text-[11px] font-semibold tracking-widest text-center py-2 uppercase">
+        ✨ Envíos gratis en compras superiores a $799 MXN | Conoce a Lili, nuestra mascota oficial ✨
+    </div>
+
+    <!-- NAVIGATION BAR -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-roseAccent/30 shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo con tu imagen real -->
+                <a href="#inicio" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-full border-2 border-goldMetallic overflow-hidden bg-roseSoft group-hover:scale-105 transition-transform shadow-sm flex items-center justify-center">
+                        <img src="img/logo.jpg" alt="Logo Chicas Bien" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-serif-title text-2xl font-bold tracking-wider text-roseDeep">
+                            CHICAS BIEN
+                        </span>
+                        <span class="text-[9px] uppercase tracking-[0.25em] text-goldDark font-semibold -mt-1">Accesorios & Comunidad</span>
+                    </div>
+                </a>
+
+                <!-- Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-4 text-xs font-semibold uppercase tracking-wider text-gray-700">
+                    <a href="#inicio" class="hover:text-roseDeep transition-colors pb-1 border-b-2 border-roseDeep">Inicio</a>
+                    <a href="#lili-section" class="hover:text-roseDeep transition-colors text-goldDark font-bold">🌸 Lili</a>
+                    <a href="#cafecito" class="hover:text-roseDeep transition-colors">Cafecito</a>
+                    <a href="#tienda" class="hover:text-roseDeep transition-colors">Moda</a>
+                    <a href="#horoscopo" class="hover:text-roseDeep transition-colors">Horóscopo</a>
+                    <a href="#experiencias" class="hover:text-roseDeep transition-colors text-roseDeep">Comunidad</a>
+                    <a href="#tienda" class="hover:text-roseDeep transition-colors font-bold text-goldDark">Tienda</a>
+                </nav>
+
+                <!-- Right Tools: Search, Login, Cart -->
+                <div class="flex items-center gap-3">
+                    
+                    <!-- Search Bar -->
+                    <div class="relative hidden sm:block">
+                        <input type="text" id="search-input" oninput="handleSearch(event)" placeholder="Buscar contenido..." 
+                               class="w-36 md:w-44 bg-roseSoft/60 border border-roseAccent/40 rounded-full py-1.5 pl-8 pr-3 text-xs text-gray-700 focus:outline-none focus:border-goldMetallic focus:w-52 transition-all relative z-50">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-xs text-roseDeep z-50 pointer-events-none"></i>
+                        
+                        <!-- Search Results Dropdown -->
+                        <div id="search-results" class="hidden absolute top-full right-0 mt-2 w-64 bg-white border border-roseAccent/30 shadow-xl rounded-2xl z-50 max-h-64 overflow-y-auto overflow-x-hidden">
+                        </div>
+                    </div>
+
+                    <!-- Auth Container -->
+                    <div id="auth-container" class="flex items-center gap-3">
+                        <button id="btn-ingresar" onclick="openLoginModal()" class="px-4 py-1.5 border border-roseAccent/60 text-roseDeep hover:bg-roseAccent hover:text-white rounded-full text-xs font-semibold tracking-wider transition-all duration-300">
+                            Ingresar
+                        </button>
+                        <div id="user-menu" class="hidden items-center gap-2">
+                            <span id="nav-user-name" class="text-xs font-bold text-roseDeep tracking-wider"></span>
+                            <button onclick="handleLogout()" class="w-8 h-8 flex items-center justify-center rounded-full bg-roseSoft text-gray-500 hover:text-roseDeep border border-roseAccent/30 hover:border-roseDeep transition-colors" title="Cerrar sesión">
+                                <i class="fa-solid fa-arrow-right-from-bracket text-[11px]"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Cart Button -->
+                    <button onclick="toggleCart()" class="relative p-2 text-gray-700 hover:text-roseDeep transition-colors focus:outline-none">
+                        <i class="fa-solid fa-bag-shopping text-xl text-roseDeep"></i>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-goldMetallic text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white">
+                            0
+                        </span>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-700 hover:text-roseDeep">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-roseAccent/30 px-6 py-4 space-y-3">
+            <a href="#inicio" class="block text-xs uppercase font-semibold tracking-wider text-roseDeep py-2 border-b border-roseSoft">Inicio</a>
+            <a href="#lili-section" class="block text-xs uppercase font-semibold tracking-wider text-goldDark py-2 border-b border-roseSoft">🌸 Lili (Mascota del Mes)</a>
+            <a href="#cafecito" class="block text-xs uppercase font-semibold tracking-wider text-gray-700 py-2 border-b border-roseSoft">El Cafecito</a>
+            <a href="#tienda" class="block text-xs uppercase font-semibold tracking-wider text-gray-700 py-2 border-b border-roseSoft">Tienda de Accesorios</a>
+            <a href="#experiencias" class="block text-xs uppercase font-semibold tracking-wider text-gray-700 py-2">Comunidad & Experiencias</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative py-20 lg:py-28 pink-gold-hero overflow-hidden border-b border-roseAccent/20">
+        <div class="absolute -top-12 -left-12 w-64 h-64 bg-roseAccent/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/2 -right-12 w-80 h-80 bg-goldMetallic/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center relative z-10">
+            
+            <div class="inline-flex items-center gap-2 bg-white/80 border border-goldMetallic/40 px-4 py-1.5 rounded-full shadow-sm mb-6">
+                <i class="fa-solid fa-sparkles text-goldMetallic text-xs"></i>
+                <span class="text-xs font-medium tracking-widest text-roseDeep uppercase">Colección de Accesorios & Punto de Encuentro</span>
+            </div>
+
+            <h1 class="font-serif-title text-4xl sm:text-6xl md:text-7xl font-bold text-roseDeep mb-6 tracking-tight">
+                CHICAS BIEN <span class="text-goldMetallic font-serif-title italic">♥</span>
+            </h1>
+
+            <p class="font-serif-title italic text-lg sm:text-2xl text-gray-700 max-w-2xl mx-auto mb-10 font-normal leading-relaxed">
+                “Más que una tienda, somos un espacio de pertenencia donde se vale no saber.”
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#lili-section" class="w-full sm:w-auto px-8 py-3.5 bg-goldMetallic hover:bg-goldDark text-white font-bold text-xs uppercase tracking-widest rounded-full shadow-lg transition-all duration-300">
+                    Conoce a Lili 🌸
+                </a>
+                <a href="#tienda" class="w-full sm:w-auto px-8 py-3.5 bg-[#ffa4b6] hover:bg-[#ff8da1] text-white font-bold text-xs uppercase tracking-widest rounded-full shadow-lg transition-all duration-300">
+                    Ver tienda
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- NUEVA SECCIÓN: LILI, LA MASCOTA VIRTUAL DEL MES -->
+    <section id="lili-section" class="py-20 bg-white border-b border-roseAccent/20 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-72 h-72 bg-roseSoft/60 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-goldDark font-semibold text-xs uppercase tracking-[0.3em] block mb-2">Compañera oficial del blog</span>
+                <h2 class="font-serif-title text-3xl sm:text-5xl font-bold text-roseDeep mb-4">Lili, la Mascota del Mes</h2>
+                <p class="text-xs text-gray-500">Nuestra tierna pajarita rosita que te acompaña mientras lees, compras o descansas en Chicas Bien.</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-roseAccent to-goldMetallic mx-auto rounded-full mt-4"></div>
+            </div>
+
+            <div class="grid md:grid-cols-12 gap-8 items-center bg-gradient-to-br from-roseSoft/40 via-white to-roseSoft/30 p-8 sm:p-12 rounded-3xl border-2 border-roseAccent/30 shadow-xl">
+                
+                <!-- Imagen de Lili -->
+                <div class="md:col-span-5 flex justify-center">
+                    <div class="relative group">
+                        <div class="absolute inset-0 bg-goldMetallic/20 rounded-full blur-xl group-hover:bg-roseAccent/30 transition-all"></div>
+                        <div class="w-60 h-60 sm:w-72 sm:h-72 rounded-full border-4 border-white shadow-2xl overflow-hidden bg-white relative z-10 p-2">
+                            <img src="img/lili.jpg" alt="Lili Mascota Chicas Bien" class="w-full h-full object-cover rounded-full group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="absolute bottom-2 right-4 bg-goldMetallic text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1 rounded-full shadow-md z-20">
+                            ✨ Mascota Estrella
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Descripción y Frase -->
+                <div class="md:col-span-7 space-y-6 text-center md:text-left">
+                    <div class="inline-flex items-center gap-2 bg-white px-3.5 py-1 rounded-full border border-roseAccent/40 shadow-sm">
+                        <i class="fa-solid fa-feather text-roseDeep text-xs"></i>
+                        <span class="text-[11px] font-bold text-roseDeep uppercase tracking-wider">Ternura & Dulzura</span>
+                    </div>
+
+                    <h3 class="font-serif-title text-2xl sm:text-3xl font-bold text-gray-800">
+                        ¡Hola! Soy Lili 🐥💖
+                    </h3>
+
+                    <p class="text-xs sm:text-sm text-gray-600 leading-relaxed font-medium">
+                        Me encantan los días tranquilos, los moños rosas, el té calientito y sobre todo darte ánimos cuando estás estudiando o creando tus propios proyectos. ¡Siempre estaré volando por aquí para recordarte que brillas con luz propia!
+                    </p>
+
+                    <!-- Quote Box -->
+                    <div class="bg-white/80 p-4 rounded-2xl border border-roseAccent/30 shadow-sm italic text-xs text-roseDeep font-serif">
+                        “Un pequeño aleteo de amor propio puede cambiar por completo el rumbo de tu día.” — Lili
+                    </div>
+
+                    <div class="pt-2 flex flex-wrap justify-center md:justify-start gap-3">
+                        <button onclick="saludarLili()" class="px-6 py-3 bg-gradient-to-r from-roseDeep to-roseAccent hover:from-roseAccent hover:to-goldMetallic text-white font-bold text-xs uppercase tracking-widest rounded-full shadow-md transition-all duration-300 flex items-center gap-2">
+                            <i class="fa-solid fa-heart"></i> Mandar saludo a Lili
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- EL CAFECITO (ARTÍCULOS RECIENTES) -->
+    <section id="cafecito" class="py-20 bg-creamBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex items-center justify-between mb-12 border-b border-roseAccent/20 pb-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-roseAccent/20 flex items-center justify-center text-roseDeep">
+                        <i class="fa-solid fa-mug-hot text-lg"></i>
+                    </div>
+                    <div>
+                        <h2 class="font-serif-title text-2xl sm:text-3xl font-bold text-gray-800">El Cafecito <span class="text-xs text-roseDeep font-sans font-medium uppercase tracking-widest block sm:inline sm:ml-2">(Recientes)</span></h2>
+                    </div>
+                </div>
+                <a href="#experiencias" class="text-xs font-semibold text-goldDark hover:text-roseDeep uppercase tracking-wider flex items-center gap-1">
+                    Ver más notas <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                </a>
+            </div>
+
+            <!-- Articles Cards Grid -->
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Card 1 -->
+                <article onclick="openArticle(1)" class="bg-white rounded-2xl overflow-hidden border border-roseAccent/20 shadow-sm hover:shadow-xl transition-all duration-300 pink-card-glow group cursor-pointer">
+                    <div class="relative h-52 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=600&auto=format&fit=crop" 
+                             alt="Accesorios & Joyería" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/fde2e4/e07a93?text=Accesorios'">
+                        <span class="absolute top-4 left-4 bg-roseSoft/90 backdrop-blur-md text-roseDeep text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full border border-roseAccent/30">
+                            Cafecito & Estilo
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-[11px] text-gray-400 font-medium">Lectura de 4 min • Octubre 2026</span>
+                        <h3 class="font-serif-title text-xl font-bold text-gray-800 mt-2 mb-3 group-hover:text-roseDeep transition-colors">
+                            El poder de un moño rosa y anillos dorados en tu look diario
+                        </h3>
+                        <p class="text-xs text-gray-600 leading-relaxed mb-4">
+                            Cómo pequeños detalles en tus accesorios transforman tu estado de ánimo y elevan cualquier outfit sencillo.
+                        </p>
+                        <span class="text-xs font-semibold text-roseDeep group-hover:text-goldDark transition-colors flex items-center gap-1">
+                            Leer artículo completo <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </span>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article onclick="openArticle(2)" class="bg-white rounded-2xl overflow-hidden border border-roseAccent/20 shadow-sm hover:shadow-xl transition-all duration-300 pink-card-glow group cursor-pointer">
+                    <div class="relative h-52 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=600&auto=format&fit=crop" 
+                             alt="Bienestar" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/fde2e4/e07a93?text=Bienestar'">
+                        <span class="absolute top-4 left-4 bg-roseSoft/90 backdrop-blur-md text-goldDark text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full border border-goldMetallic/30">
+                            Bienestar
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-[11px] text-gray-400 font-medium">Lectura de 3 min • Octubre 2026</span>
+                        <h3 class="font-serif-title text-xl font-bold text-gray-800 mt-2 mb-3 group-hover:text-roseDeep transition-colors">
+                            5 rituales para recordar lo valiosa que eres todos los días
+                        </h3>
+                        <p class="text-xs text-gray-600 leading-relaxed mb-4">
+                            Pequeñas pausas de amor propio, mascarillas y afirmaciones para momentos donde necesitas reconectar.
+                        </p>
+                        <span class="text-xs font-semibold text-roseDeep group-hover:text-goldDark transition-colors flex items-center gap-1">
+                            Leer artículo completo <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </span>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article onclick="openArticle(3)" class="bg-white rounded-2xl overflow-hidden border border-roseAccent/20 shadow-sm hover:shadow-xl transition-all duration-300 pink-card-glow group cursor-pointer">
+                    <div class="relative h-52 overflow-hidden">
+                        <img src="img/amistad.png" 
+                             alt="Pulseras & Regalos" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/fde2e4/e07a93?text=Pulseras'">
+                        <span class="absolute top-4 left-4 bg-roseSoft/90 backdrop-blur-md text-roseDeep text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full border border-roseAccent/30">
+                            Regalos Especiales
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-[11px] text-gray-400 font-medium">Lectura de 5 min • Octubre 2026</span>
+                        <h3 class="font-serif-title text-xl font-bold text-gray-800 mt-2 mb-3 group-hover:text-roseDeep transition-colors">
+                            Pulseras compartidas: El símbolo de amistad indestructible
+                        </h3>
+                        <p class="text-xs text-gray-600 leading-relaxed mb-4">
+                            Descubre cómo regalar un detalle con significado a tu mejor amiga o a ti misma.
+                        </p>
+                        <span class="text-xs font-semibold text-roseDeep group-hover:text-goldDark transition-colors flex items-center gap-1">
+                            Leer artículo completo <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </span>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CLUB DE LECTURA & RECOMENDACIONES -->
+    <section id="club-lectura" class="py-20 bg-white border-t border-roseAccent/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-goldDark font-semibold text-xs uppercase tracking-[0.3em] block mb-2">Para tus ratos libres</span>
+                <h2 class="font-serif-title text-3xl sm:text-5xl font-bold text-roseDeep mb-4">Club de Recomendaciones</h2>
+                <p class="text-xs text-gray-500">Nuestros favoritos del mes: Novelas románticas, maratones de anime y la mejor vibra musical.</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-roseAccent to-goldMetallic mx-auto rounded-full mt-4"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Libro Recomendado -->
+                <div class="bg-roseSoft/30 p-8 rounded-3xl border border-roseAccent/20 flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-20 h-20 bg-white rounded-full shadow-md flex items-center justify-center mb-6 border-2 border-goldMetallic">
+                        <i class="fa-solid fa-book-open text-3xl text-roseDeep"></i>
+                    </div>
+                    <span class="text-[10px] text-goldDark uppercase font-bold tracking-widest mb-2 border-b border-goldMetallic/30 pb-1">Novela del Mes</span>
+                    <h3 class="font-serif-title text-xl font-bold text-gray-800 mb-2">Amor y Contratos</h3>
+                    <p class="text-xs text-gray-600 mb-6 flex-1">
+                        Un romance adictivo. Ella necesita un empleo, él (un CEO millonario frío pero de buen corazón) necesita una asistente que no le tenga miedo. ¡Un <em>grumpy x sunshine</em> que te atrapará!
+                    </p>
+                    <button class="btn-fav px-5 py-2 bg-white text-roseDeep border border-roseAccent hover:bg-roseDeep hover:text-white text-xs font-bold rounded-full transition-colors w-full" data-id="fav-libro">
+                        Guardar recomendación <span class="fav-icon ml-1 text-sm pointer-events-none">♡</span>
+                    </button>
+                </div>
+
+                <!-- Anime Recomendado -->
+                <div class="bg-gradient-to-b from-white to-[#e2d5f8]/30 p-8 rounded-3xl border border-[#d4c3f4]/50 flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-20 h-20 bg-white rounded-full shadow-md flex items-center justify-center mb-6 border-2 border-[#a881e6]">
+                        <i class="fa-solid fa-tv text-3xl text-[#8e65d3]"></i>
+                    </div>
+                    <span class="text-[10px] text-[#8e65d3] uppercase font-bold tracking-widest mb-2 border-b border-[#d4c3f4] pb-1">Maratón de Fin de Semana</span>
+                    <h3 class="font-serif-title text-xl font-bold text-gray-800 mb-2">Aesthetic Anime Vibes</h3>
+                    <p class="text-xs text-gray-600 mb-6 flex-1">
+                        Prepara tu mascarilla y té caliente. Nuestra recomendación de <em>Slice of Life</em> y romance escolar te hará sentir en una nube de algodón. Perfecto para maratonear el domingo.
+                    </p>
+                    <button class="btn-fav px-5 py-2 bg-white text-[#8e65d3] border border-[#d4c3f4] hover:bg-[#8e65d3] hover:text-white text-xs font-bold rounded-full transition-colors w-full" data-id="fav-anime">
+                        Guardar recomendación <span class="fav-icon ml-1 text-sm pointer-events-none">♡</span>
+                    </button>
+                </div>
+
+                <!-- Playlist Recomendada -->
+                <div class="bg-creamBg p-8 rounded-3xl border border-goldMetallic/20 flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-20 h-20 bg-white rounded-full shadow-md flex items-center justify-center mb-6 border-2 border-goldMetallic">
+                        <i class="fa-solid fa-headphones text-3xl text-goldDark"></i>
+                    </div>
+                    <span class="text-[10px] text-goldDark uppercase font-bold tracking-widest mb-2 border-b border-goldMetallic/30 pb-1">Playlist Curada</span>
+                    <h3 class="font-serif-title text-xl font-bold text-gray-800 mb-2">Soft Girl Vibes 🎧</h3>
+                    <p class="text-xs text-gray-600 mb-6 flex-1">
+                        Canciones K-pop suaves, R&B chill y lofi para acompañarte mientras lees tu horóscopo, te arreglas el cabello o simplemente disfrutas tu propia compañía.
+                    </p>
+                    <button class="btn-fav px-5 py-2 bg-white text-goldDark border border-goldMetallic hover:bg-goldMetallic hover:text-white text-xs font-bold rounded-full transition-colors w-full" data-id="fav-playlist">
+                        Guardar recomendación <span class="fav-icon ml-1 text-sm pointer-events-none">♡</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- HORÓSCOPO AESTHETIC -->
+    <section id="horoscopo" class="py-20 bg-roseSoft/30 border-t border-roseAccent/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-goldDark font-semibold text-xs uppercase tracking-[0.3em] block mb-2">Tu energía diaria</span>
+                <h2 class="font-serif-title text-3xl sm:text-5xl font-bold text-roseDeep mb-4">Horóscopo de Hoy</h2>
+                <p class="text-xs text-gray-500">Descubre el mensaje que las estrellas tienen para tu amor propio y tu estilo.</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-roseAccent to-goldMetallic mx-auto rounded-full mt-4"></div>
+            </div>
+
+            <!-- Zodiac Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6">
+                <button onclick="showHoroscope('Aries', '♈')" class="group bg-white p-6 rounded-3xl border border-roseAccent/20 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center text-center">
+                    <span class="text-4xl text-goldMetallic group-hover:scale-110 transition-transform duration-500 mb-3 block">♈</span>
+                    <h3 class="font-serif-title text-sm font-bold text-gray-800 uppercase tracking-widest">Aries</h3>
+                </button>
+                <button onclick="showHoroscope('Tauro', '♉')" class="group bg-white p-6 rounded-3xl border border-roseAccent/20 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center text-center">
+                    <span class="text-4xl text-goldMetallic group-hover:scale-110 transition-transform duration-500 mb-3 block">♉</span>
+                    <h3 class="font-serif-title text-sm font-bold text-gray-800 uppercase tracking-widest">Tauro</h3>
+                </button>
+                <button onclick="showHoroscope('Géminis', '♊')" class="group bg-white p-6 rounded-3xl border border-roseAccent/20 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center text-center">
+                    <span class="text-4xl text-goldMetallic group-hover:scale-110 transition-transform duration-500 mb-3 block">♊</span>
+                    <h3 class="font-serif-title text-sm font-bold text-gray-800 uppercase tracking-widest">Géminis</h3>
+                </button>
+                <button onclick="showHoroscope('Cáncer', '♋')" class="group bg-white p-6 rounded-3xl border border-roseAccent/20 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center text-center">
+                    <span class="text-4xl text-goldMetallic group-hover:scale-110 transition-transform duration-500 mb-3 block">♋</span>
+                    <h3 class="font-serif-title text-sm font-bold text-gray-800 uppercase tracking-widest">Cáncer</h3>
+                </button>
+                <button onclick="showHoroscope('Leo', '♌')" class="group bg-white p-6 rounded-3xl border border-roseAccent/20 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center text-center">
+                    <span class="text-4xl text-goldMetallic group-hover:scale-110 transition-transform duration-500 mb-3 block">♌</span>
+                    <h3 class="font-serif-title text-sm font-bold text-gray-800 uppercase tracking-widest">Leo</h3>
+                </button>
+                <button onclick="showHoroscope('Virgo', '♍')" class="group bg-white p-6 rounded-3xl border border-roseAccent/20 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center text-center">
+                    <span class="text-4xl text-goldMetallic group-hover:scale-110 transition-transform duration-500 mb-3 block">♍</span>
+                    <h3 class="font-serif-title text-sm font-bold text-gray-800 uppercase tracking-widest">Virgo</h3>
+                </button>
+                <button onclick="showHoroscope('Libra', '♎')" class="group bg-white p-6 rounded-3xl border border-roseAccent/20 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center text-center">
+                    <span class="text-4xl text-goldMetallic group-hover:scale-110 transition-transform duration-500 mb-3 block">♎</span>
+                    <h3 class="font-serif-title text-sm font-bold text-gray-800 uppercase tracking-widest">Libra</h3>
+                </button>
+                <button onclick="showHoroscope('Escorpio', '♏')" class="group bg-white p-6 rounded-3xl border border-roseAccent/20 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center text-center">
+                    <span class="text-4xl text-goldMetallic group-hover:scale-110 transition-transform duration-500 mb-3 block">♏</span>
+                    <h3 class="font-serif-title text-sm font-bold text-gray-800 uppercase tracking-widest">Escorpio</h3>
+                </button>
+                <button onclick="showHoroscope('Sagitario', '♐')" class="group bg-white p-6 rounded-3xl border border-roseAccent/20 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center text-center">
+                    <span class="text-4xl text-goldMetallic group-hover:scale-110 transition-transform duration-500 mb-3 block">♐</span>
+                    <h3 class="font-serif-title text-sm font-bold text-gray-800 uppercase tracking-widest">Sagitario</h3>
+                </button>
+                <button onclick="showHoroscope('Capricornio', '♑')" class="group bg-white p-6 rounded-3xl border border-roseAccent/20 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center text-center">
+                    <span class="text-4xl text-goldMetallic group-hover:scale-110 transition-transform duration-500 mb-3 block">♑</span>
+                    <h3 class="font-serif-title text-sm font-bold text-gray-800 uppercase tracking-widest">Capricornio</h3>
+                </button>
+                <button onclick="showHoroscope('Acuario', '♒')" class="group bg-white p-6 rounded-3xl border border-roseAccent/20 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center text-center">
+                    <span class="text-4xl text-goldMetallic group-hover:scale-110 transition-transform duration-500 mb-3 block">♒</span>
+                    <h3 class="font-serif-title text-sm font-bold text-gray-800 uppercase tracking-widest">Acuario</h3>
+                </button>
+                <button onclick="showHoroscope('Piscis', '♓')" class="group bg-white p-6 rounded-3xl border border-roseAccent/20 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center text-center">
+                    <span class="text-4xl text-goldMetallic group-hover:scale-110 transition-transform duration-500 mb-3 block">♓</span>
+                    <h3 class="font-serif-title text-sm font-bold text-gray-800 uppercase tracking-widest">Piscis</h3>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIENDA EXCLUSIVA DE ACCESORIOS -->
+    <section id="tienda" class="py-20 bg-white border-t border-roseAccent/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-goldDark font-semibold text-xs uppercase tracking-[0.3em] block mb-2">Boutique de Accesorios</span>
+                <h2 class="font-serif-title text-3xl sm:text-5xl font-bold text-roseDeep mb-4">Nuestra Tienda</h2>
+                <p class="text-xs text-gray-500">Diseños únicos pensados para complementar tu esencia con toques rosa y destellos dorados.</p>
+                <div class="w-16 h-1 bg-gradient-to-r from-roseAccent to-goldMetallic mx-auto rounded-full mt-4"></div>
+            </div>
+
+            <!-- Store Category Filters -->
+            <div class="flex justify-center gap-2 sm:gap-3 mb-12 flex-wrap">
+                <button onclick="filterProducts('all')" class="px-5 py-2 bg-roseDeep text-white text-xs font-semibold rounded-full shadow-sm hover:scale-105 transition-all">Todos los Accesorios</button>
+                <button onclick="filterProducts('pulseras')" class="px-5 py-2 bg-roseSoft text-gray-700 hover:text-roseDeep text-xs font-semibold rounded-full border border-roseAccent/30 transition-all">✨ Pulseras</button>
+                <button onclick="filterProducts('anillos')" class="px-5 py-2 bg-roseSoft text-gray-700 hover:text-roseDeep text-xs font-semibold rounded-full border border-roseAccent/30 transition-all">💍 Anillos</button>
+                <button onclick="filterProducts('monos')" class="px-5 py-2 bg-roseSoft text-gray-700 hover:text-roseDeep text-xs font-semibold rounded-full border border-roseAccent/30 transition-all">🎀 Moños / Lazos</button>
+                <button onclick="filterProducts('collares')" class="px-5 py-2 bg-roseSoft text-gray-700 hover:text-roseDeep text-xs font-semibold rounded-full border border-roseAccent/30 transition-all">📿 Collares</button>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8" id="product-grid">
+                
+                <!-- Product 1 -->
+                <div class="product-card pulseras bg-creamBg rounded-2xl p-4 border border-roseAccent/20 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+                    <div class="relative overflow-hidden rounded-xl mb-4 h-60">
+                        <img src="img/amor.jpg" 
+                             alt="Pulsera Dije Corazón" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/400x500/fde2e4/d4af37?text=Pulsera+Rose'">
+                        <button class="btn-fav absolute top-3 right-3 w-8 h-8 bg-white rounded-full text-roseDeep shadow-sm flex items-center justify-center hover:scale-110 transition-transform" data-id="fav-prod-1">
+                            <span class="fav-icon text-lg pointer-events-none">♡</span>
+                        </button>
+                    </div>
+                    <div>
+                        <span class="text-[10px] text-goldDark uppercase font-semibold tracking-wider">Pulsera Exclusiva</span>
+                        <h3 class="font-serif-title text-lg font-bold text-gray-800 mt-1 mb-2">Pulsera "Amor Propio" Chapa de Oro</h3>
+                        <p class="text-xs text-gray-500 mb-4 line-clamp-2">Elegante pulsera ajustable con perlas de río y dije de corazón dorado grabado.</p>
+                    </div>
+                    <div class="flex items-center justify-between border-t border-roseAccent/20 pt-3 mt-auto">
+                        <span class="font-bold text-roseDeep text-lg">$350 MXN</span>
+                        <button onclick="addToCart(1, 'Pulsera Amor Propio Chapa de Oro', 350, 'https://images.unsplash.com/photo-1611591475155-4284fa289329?q=80&w=200')" 
+                                class="px-4 py-2 bg-goldMetallic hover:bg-goldDark text-white text-xs font-bold rounded-full shadow-sm hover:shadow-md transition-all">
+                            + Agregar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card anillos bg-creamBg rounded-2xl p-4 border border-roseAccent/20 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+                    <div class="relative overflow-hidden rounded-xl mb-4 h-60">
+                        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=600&auto=format&fit=crop" 
+                             alt="Anillo Cuarzo Rosa" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/400x500/fde2e4/d4af37?text=Anillo+Rose'">
+                        <button class="btn-fav absolute top-3 right-3 w-8 h-8 bg-white rounded-full text-roseDeep shadow-sm flex items-center justify-center hover:scale-110 transition-transform" data-id="fav-prod-2">
+                            <span class="fav-icon text-lg pointer-events-none">♡</span>
+                        </button>
+                    </div>
+                    <div>
+                        <span class="text-[10px] text-goldDark uppercase font-semibold tracking-wider">Anillos</span>
+                        <h3 class="font-serif-title text-lg font-bold text-gray-800 mt-1 mb-2">Anillo Ajustable "Rose Quartz"</h3>
+                        <p class="text-xs text-gray-500 mb-4 line-clamp-2">Banda bañada en oro de 18k con una delicada piedra de cuarzo rosa pulido.</p>
+                    </div>
+                    <div class="flex items-center justify-between border-t border-roseAccent/20 pt-3 mt-auto">
+                        <span class="font-bold text-roseDeep text-lg">$290 MXN</span>
+                        <button onclick="addToCart(2, 'Anillo Rose Quartz Gold', 290, 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=200')" 
+                                class="px-4 py-2 bg-goldMetallic hover:bg-goldDark text-white text-xs font-bold rounded-full shadow-sm hover:shadow-md transition-all">
+                            + Agregar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card monos bg-creamBg rounded-2xl p-4 border border-roseAccent/20 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+                    <div class="relative overflow-hidden rounded-xl mb-4 h-60">
+                        <img src="img/moño.jpg" 
+                             alt="Moño de Seda Rosa" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/400x500/fde2e4/d4af37?text=Mono+Seda'">
+                        <button class="btn-fav absolute top-3 right-3 w-8 h-8 bg-white rounded-full text-roseDeep shadow-sm flex items-center justify-center hover:scale-110 transition-transform" data-id="fav-prod-3">
+                            <span class="fav-icon text-lg pointer-events-none">♡</span>
+                        </button>
+                    </div>
+                    <div>
+                        <span class="text-[10px] text-goldDark uppercase font-semibold tracking-wider">Moños & Lazos</span>
+                        <h3 class="font-serif-title text-lg font-bold text-gray-800 mt-1 mb-2">Moño Aesthetic "Coquette Pink"</h3>
+                        <p class="text-xs text-gray-500 mb-4 line-clamp-2">Moño de satén rosa blush estilo coquette con broche francés en tono dorado.</p>
+                    </div>
+                    <div class="flex items-center justify-between border-t border-roseAccent/20 pt-3 mt-auto">
+                        <span class="font-bold text-roseDeep text-lg">$195 MXN</span>
+                        <button onclick="addToCart(3, 'Moño Coquette Pink Satén', 195, 'https://images.unsplash.com/photo-1584297091622-af8e5cb1f180?q=80&w=200')" 
+                                class="px-4 py-2 bg-goldMetallic hover:bg-goldDark text-white text-xs font-bold rounded-full shadow-sm hover:shadow-md transition-all">
+                            + Agregar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card collares bg-creamBg rounded-2xl p-4 border border-roseAccent/20 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+                    <div class="relative overflow-hidden rounded-xl mb-4 h-60">
+                        <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=600&auto=format&fit=crop" 
+                             alt="Collar Dije Corazón" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/400x500/fde2e4/d4af37?text=Collar+Gold'">
+                        <button class="btn-fav absolute top-3 right-3 w-8 h-8 bg-white rounded-full text-roseDeep shadow-sm flex items-center justify-center hover:scale-110 transition-transform" data-id="fav-prod-4">
+                            <span class="fav-icon text-lg pointer-events-none">♡</span>
+                        </button>
+                    </div>
+                    <div>
+                        <span class="text-[10px] text-goldDark uppercase font-semibold tracking-wider">Collares</span>
+                        <h3 class="font-serif-title text-lg font-bold text-gray-800 mt-1 mb-2">Collar Corazón "Chicas Bien"</h3>
+                        <p class="text-xs text-gray-500 mb-4 line-clamp-2">Cadena fina con chapa de oro de 18k y dije abombado ultra refinado.</p>
+                    </div>
+                    <div class="flex items-center justify-between border-t border-roseAccent/20 pt-3 mt-auto">
+                        <span class="font-bold text-roseDeep text-lg">$420 MXN</span>
+                        <button onclick="addToCart(4, 'Collar Corazón Chicas Bien Gold', 420, 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=200')" 
+                                class="px-4 py-2 bg-goldMetallic hover:bg-goldDark text-white text-xs font-bold rounded-full shadow-sm hover:shadow-md transition-all">
+                            + Agregar
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN COMUNIDAD -->
+    <section id="experiencias" class="py-20 bg-roseSoft/40 border-t border-roseAccent/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 bg-white px-4 py-1 rounded-full border border-goldMetallic/40 shadow-sm mb-3">
+                    <i class="fa-solid fa-heart text-roseDeep text-xs"></i>
+                    <span class="text-[11px] font-bold uppercase tracking-widest text-goldDark">El Rincón de la Comunidad</span>
+                </div>
+                <h2 class="font-serif-title text-3xl sm:text-5xl font-bold text-roseDeep mb-4">Experiencias Chicas Bien</h2>
+                <p class="text-xs text-gray-600 leading-relaxed">
+                    Un espacio seguro para compartir anécdotas, historias con tus accesorios, consejos de amor propio o simplemente saludar. ¡Tu voz es bienvenida aquí!
+                </p>
+                <div class="w-16 h-1 bg-gradient-to-r from-roseAccent to-goldMetallic mx-auto rounded-full mt-4"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-10 items-start">
+                
+                <!-- FORMULARIO -->
+                <div class="lg:col-span-5 bg-white p-6 sm:p-8 rounded-3xl border-2 border-goldMetallic/30 shadow-xl relative">
+                    <div class="absolute -top-3 right-6 bg-goldMetallic text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-sm">
+                        Escribe tu mensaje ✨
+                    </div>
+
+                    <h3 class="font-serif-title text-xl font-bold text-gray-800 mb-2">Comparte con la Comunidad</h3>
+                    <p class="text-xs text-gray-500 mb-6">¿Qué te inspiró hoy? ¿Cómo combinaste tu accesorio favorito?</p>
+
+                    <form onsubmit="postExperience(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-[11px] font-semibold uppercase tracking-wider text-gray-700 mb-1">Nombre o Apodo 💕</label>
+                            <input type="text" id="exp-name" required placeholder="Ej. Camila M. / @cami_rose" 
+                                   class="w-full bg-roseSoft/50 border border-roseAccent/30 rounded-full px-4 py-2.5 text-xs focus:outline-none focus:border-goldMetallic">
+                        </div>
+
+                        <div>
+                            <label class="block text-[11px] font-semibold uppercase tracking-wider text-gray-700 mb-1">Categoría</label>
+                            <select id="exp-category" class="w-full bg-roseSoft/50 border border-roseAccent/30 rounded-full px-4 py-2.5 text-xs text-gray-700 focus:outline-none focus:border-goldMetallic">
+                                <option value="Experiencia">✨ Experiencia con Accesorio</option>
+                                <option value="Consejito">🎀 Consejito de Moda & Moños</option>
+                                <option value="Amor Propio">💖 Amor Propio & Reflexión</option>
+                                <option value="Cafecito">☕ Un Saludo / Cafecito</option>
+                                <option value="Lili">🐥 Saludo para Lili</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-[11px] font-semibold uppercase tracking-wider text-gray-700 mb-1">Tu Experiencia o Mensaje 💌</label>
+                            <textarea id="exp-message" required rows="4" placeholder="Escribe tu historia aquí..." 
+                                      class="w-full bg-roseSoft/50 border border-roseAccent/30 rounded-2xl p-4 text-xs text-gray-700 focus:outline-none focus:border-goldMetallic resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-roseDeep to-roseAccent hover:from-roseAccent hover:to-goldMetallic text-white font-bold text-xs uppercase tracking-widest rounded-full shadow-md hover:shadow-lg transition-all duration-300">
+                            Publicar en el Muro 💕
+                        </button>
+                    </form>
+                </div>
+
+                <!-- MURO DE MENSAJES -->
+                <div class="lg:col-span-7">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="font-serif-title text-xl font-bold text-gray-800">Mensajes Recientes</h3>
+                        <span id="exp-counter" class="text-xs text-roseDeep font-semibold bg-roseSoft px-3 py-1 rounded-full border border-roseAccent/30">
+                            3 Historias
+                        </span>
+                    </div>
+
+                    <div id="experiences-feed" class="space-y-4 max-h-[580px] overflow-y-auto pr-2">
+                        <div class="bg-white p-6 rounded-2xl border border-roseAccent/20 shadow-sm hover:shadow-md transition-all">
+                            <div class="flex justify-between items-start mb-3">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-9 h-9 rounded-full bg-roseSoft border border-goldMetallic/40 flex items-center justify-center font-bold text-roseDeep text-xs">
+                                        VS
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-xs text-gray-800">Valeria S.</h4>
+                                        <span class="text-[10px] text-gray-400">Hace 2 horas</span>
+                                    </div>
+                                </div>
+                                <span class="bg-roseSoft text-roseDeep text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full border border-roseAccent/30">
+                                    ✨ Experiencia
+                                </span>
+                            </div>
+                            <p class="text-xs text-gray-600 leading-relaxed mb-4">
+                                "Me compré el moño rosa estilo coquette y la pulsera de corazón para una presentación importante en la universidad. ¡Me sentí súper segura y con muchísima buena vibra! Amé el empaque tan lindo."
+                            </p>
+                            <div class="flex items-center justify-between border-t border-roseSoft pt-3 text-[11px] text-gray-500">
+                                <button onclick="likePost(this)" class="flex items-center gap-1.5 hover:text-roseDeep transition-colors">
+                                    <i class="fa-regular fa-heart text-roseDeep"></i>
+                                    <span>Me gusta (18)</span>
+                                </button>
+                                <span class="text-goldDark font-medium">#ChicasBien</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-charcoal text-white pt-16 pb-12 border-t-4 border-goldMetallic relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-10 pb-12 border-b border-gray-800">
+                
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-full border border-goldMetallic flex items-center justify-center bg-roseSoft/10 overflow-hidden">
+                            <img src="img/logo.jpg" alt="Logo" class="w-full h-full object-cover">
+                        </div>
+                        <span class="font-serif-title text-xl font-bold text-roseAccent">CHICAS BIEN</span>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Un espacio diseñado con amor para acompañar a mujeres auténticas con accesorios finos y una comunidad donde compartir libremente.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-serif-title text-lg font-bold text-goldMetallic mb-4">Accesorios</h4>
+                    <ul class="space-y-2 text-xs text-gray-400">
+                        <li><a href="#tienda" onclick="filterProducts('pulseras')" class="hover:text-roseAccent transition-colors">Pulseras Ajustables</a></li>
+                        <li><a href="#tienda" onclick="filterProducts('anillos')" class="hover:text-roseAccent transition-colors">Anillos con Cuarzo</a></li>
+                        <li><a href="#tienda" onclick="filterProducts('monos')" class="hover:text-roseAccent transition-colors">Moños Coquette & Satén</a></li>
+                        <li><a href="#tienda" onclick="filterProducts('collares')" class="hover:text-roseAccent transition-colors">Collares en Chapa de Oro</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-serif-title text-lg font-bold text-goldMetallic mb-4">Comunidad</h4>
+                    <ul class="space-y-2 text-xs text-gray-400">
+                        <li><a href="#lili-section" class="hover:text-roseAccent transition-colors">Conoce a Lili 🐥</a></li>
+                        <li><a href="#experiencias" class="hover:text-roseAccent transition-colors">Muro de Experiencias</a></li>
+                        <li><a href="#cafecito" class="hover:text-roseAccent transition-colors">El Cafecito Blog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-serif-title text-lg font-bold text-goldMetallic mb-4">Síguenos</h4>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="https://www.instagram.com/chicas_bien_oficial?stkn=MXczYmkzbnd2YXc5eg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-gray-800 hover:bg-roseDeep flex items-center justify-center text-white transition-colors">
+                            <i class="fa-brands fa-instagram text-sm pointer-events-none"></i>
+                        </a>
+                        <a href="https://www.facebook.com/share/19tFrgSyKZ/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-gray-800 hover:bg-roseDeep flex items-center justify-center text-white transition-colors">
+                            <i class="fa-brands fa-facebook-f text-sm pointer-events-none"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@chicas.bien79?_r=1&_t=ZS-9AKlYFkDg3Q" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-gray-800 hover:bg-roseDeep flex items-center justify-center text-white transition-colors">
+                            <i class="fa-brands fa-tiktok text-sm pointer-events-none"></i>
+                        </a>
+                        <a href="https://youtube.com/@chicasbien-u8e?si=C7_v1vb0cTLlQ4b-" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-gray-800 hover:bg-roseDeep flex items-center justify-center text-white transition-colors">
+                            <i class="fa-brands fa-youtube text-sm pointer-events-none"></i>
+                        </a>
+                    </div>
+                    <p class="text-[11px] text-gray-500">Contacto: hola@chicasbien.com</p>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-[11px] text-gray-500 gap-4">
+                <p>&copy; 2026 Chicas Bien. Todos los derechos reservados.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-gray-300">Términos y Condiciones</a>
+                    <a href="#" class="hover:text-gray-300">Aviso de Privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CARRITO DE COMPRAS -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 hidden transition-opacity">
+        <div onclick="toggleCart()" class="absolute inset-0 bg-black/50 backdrop-blur-sm cursor-pointer"></div>
+        <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+            <div class="w-screen max-w-md bg-white shadow-2xl flex flex-col justify-between border-l border-goldMetallic/30">
+                <div class="p-6 bg-roseSoft border-b border-roseAccent/20 flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-bag-shopping text-roseDeep text-xl"></i>
+                        <h3 class="font-serif-title text-xl font-bold text-gray-800">Tu Carrito Rosé</h3>
+                    </div>
+                    <button onclick="toggleCart()" class="text-gray-400 hover:text-roseDeep text-xl">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div id="cart-items" class="p-6 overflow-y-auto flex-1 space-y-4">
+                    <div class="text-center py-12 text-gray-400">
+                        <i class="fa-solid fa-heart-crack text-4xl mb-3 text-roseAccent/40"></i>
+                        <p class="text-xs">Tu carrito está vacío por ahora.</p>
+                    </div>
+                </div>
+                <div class="p-6 bg-creamBg border-t border-roseAccent/20 space-y-4">
+                    <div class="flex justify-between items-center text-sm font-semibold">
+                        <span class="text-gray-600">Subtotal</span>
+                        <span id="cart-subtotal" class="text-roseDeep font-bold text-base">$0.00 MXN</span>
+                    </div>
+                    <p class="text-[10px] text-gray-400">Los impuestos y envío se calculan en el checkout.</p>
+                    <button onclick="checkout()" class="w-full py-3.5 bg-gradient-to-r from-roseDeep to-goldMetallic text-white text-xs font-bold uppercase tracking-widest rounded-full shadow-md hover:shadow-lg transition-all">
+                        Proceder al Pago ✨
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE INGRESO / LOGIN -->
+    <div id="login-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+        <div class="bg-white max-w-sm w-full rounded-3xl p-8 border-2 border-goldMetallic/40 shadow-2xl relative overflow-hidden">
+            <button onclick="closeLoginModal()" class="absolute top-4 right-4 text-gray-400 hover:text-roseDeep text-lg z-10">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="text-center mb-6 relative z-10">
+                <div class="w-12 h-12 rounded-full bg-roseSoft text-roseDeep mx-auto flex items-center justify-center text-xl mb-3 border border-goldMetallic/30">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <h3 id="auth-modal-title" class="font-serif-title text-2xl font-bold text-gray-800">¡Hola, Chica Bien!</h3>
+                <p id="auth-modal-subtitle" class="text-xs text-gray-500 mt-1">Ingresa a tu cuenta para guardar tus favoritos.</p>
+            </div>
+            <form onsubmit="handleAuthSubmit(event)" class="space-y-4 relative z-10">
+                <div id="auth-name-group" class="hidden">
+                    <label class="block text-[11px] font-semibold text-gray-600 uppercase mb-1">Nombre o Apodo</label>
+                    <input type="text" id="auth-name" placeholder="Ej. Camila" class="w-full bg-roseSoft/40 border border-roseAccent/30 rounded-full px-4 py-2 text-xs focus:outline-none focus:border-goldMetallic">
+                </div>
+                <div>
+                    <label class="block text-[11px] font-semibold text-gray-600 uppercase mb-1">Correo Electrónico</label>
+                    <input type="email" id="auth-email" required placeholder="tu@email.com" class="w-full bg-roseSoft/40 border border-roseAccent/30 rounded-full px-4 py-2 text-xs focus:outline-none focus:border-goldMetallic">
+                </div>
+                <div>
+                    <label class="block text-[11px] font-semibold text-gray-600 uppercase mb-1">Contraseña</label>
+                    <input type="password" id="auth-password" required placeholder="••••••••" class="w-full bg-roseSoft/40 border border-roseAccent/30 rounded-full px-4 py-2 text-xs focus:outline-none focus:border-goldMetallic">
+                </div>
+                <div id="auth-error" class="text-[10px] text-red-500 font-semibold text-center hidden"></div>
+                <button type="submit" id="auth-submit-btn" class="w-full py-3 bg-roseDeep hover:bg-roseAccent text-white text-xs font-bold uppercase tracking-widest rounded-full shadow-md transition-all mt-2">
+                    Ingresar
+                </button>
+                <div class="text-center mt-4">
+                    <button type="button" onclick="toggleAuthMode()" class="text-[11px] text-gray-500 hover:text-roseDeep font-semibold transition-colors">
+                        <span id="auth-toggle-text">¿No tienes cuenta? <span class="text-goldDark underline">Regístrate aquí</span></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL DE HORÓSCOPO -->
+    <div id="horoscope-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+        <div class="bg-gradient-to-br from-white via-roseSoft/50 to-white max-w-sm w-full rounded-3xl p-8 border-2 border-goldMetallic/40 shadow-2xl relative overflow-hidden">
+            <button onclick="closeHoroscopeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-roseDeep text-lg z-10">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="text-center relative z-10">
+                <span id="horoscope-icon" class="text-5xl text-goldMetallic mb-2 block drop-shadow-md">✨</span>
+                <h3 id="horoscope-title" class="font-serif-title text-2xl font-bold text-roseDeep uppercase tracking-widest mt-2">Signo</h3>
+                <div class="w-10 h-0.5 bg-goldMetallic mx-auto rounded-full my-3"></div>
+                <p id="horoscope-text" class="text-sm text-gray-600 leading-relaxed font-medium italic mt-4 mb-6">
+                    Tu mensaje de las estrellas aparecerá aquí.
+                </p>
+                <button onclick="closeHoroscopeModal()" class="px-6 py-2 bg-white border border-goldMetallic text-goldDark hover:bg-goldMetallic hover:text-white font-semibold text-xs uppercase tracking-widest rounded-full shadow-sm transition-all duration-300">
+                    Aceptar la energía ✨
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE LECTURA DE ARTÍCULO -->
+    <div id="article-modal" class="fixed inset-0 z-50 hidden bg-creamBg overflow-y-auto">
+        <div class="min-h-screen relative pb-20">
+            <div class="sticky top-0 bg-white/90 backdrop-blur-md border-b border-roseAccent/30 py-4 px-6 flex justify-between items-center z-10">
+                <span class="font-serif-title text-lg font-bold text-roseDeep tracking-widest uppercase text-[10px]">Revista Cafecito</span>
+                <button onclick="closeArticle()" class="w-8 h-8 bg-roseSoft text-roseDeep rounded-full flex items-center justify-center hover:bg-roseAccent hover:text-white transition-colors">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="max-w-3xl mx-auto mt-8 px-4 sm:px-6">
+                <div class="text-center mb-8">
+                    <span id="article-modal-category" class="text-goldDark text-[10px] uppercase font-bold tracking-widest mb-3 block">Categoría</span>
+                    <h2 id="article-modal-title" class="font-serif-title text-3xl sm:text-5xl font-bold text-gray-800 leading-tight mb-4">Título del Artículo</h2>
+                    <span id="article-modal-date" class="text-xs text-gray-400 font-medium">Fecha de publicación</span>
+                </div>
+                <div class="rounded-3xl overflow-hidden mb-10 shadow-lg border border-roseAccent/20">
+                    <img id="article-modal-img" src="" alt="Imagen artículo" class="w-full h-64 sm:h-96 object-cover">
+                </div>
+                <div id="article-modal-content" class="prose prose-sm sm:prose-base prose-rose max-w-none text-gray-700 leading-relaxed font-sans"></div>
+                <div class="mt-12 pt-8 border-t border-roseSoft flex items-center justify-between">
+                    <span class="text-sm font-semibold text-roseDeep">¿Te gustó el artículo?</span>
+                    <button class="w-10 h-10 rounded-full bg-white border border-roseAccent text-roseDeep hover:bg-roseDeep hover:text-white flex items-center justify-center transition-colors shadow-sm">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-32 opacity-0 transition-all duration-500 bg-white border-2 border-goldMetallic p-4 rounded-2xl shadow-2xl flex items-center gap-3 max-w-sm pointer-events-none">
+        <div class="w-8 h-8 rounded-full bg-roseSoft text-roseDeep flex items-center justify-center shrink-0">
+            <i class="fa-solid fa-check text-sm"></i>
+        </div>
+        <div>
+            <h4 class="text-xs font-bold text-gray-800" id="toast-title">¡Notificación!</h4>
+            <p class="text-[11px] text-gray-500" id="toast-msg">Mensaje de confirmación aquí.</p>
+        </div>
+    </div>
+
+    <!-- SCRIPT AUTH LOCAL -->
+    <script>
+        let isRegistering = false;
+
+        window.toggleAuthMode = () => {
+            isRegistering = !isRegistering;
+            document.getElementById('auth-name-group').classList.toggle('hidden', !isRegistering);
+            document.getElementById('auth-modal-title').innerText = isRegistering ? 'Únete a la Comunidad' : '¡Hola, Chica Bien!';
+            document.getElementById('auth-modal-subtitle').innerText = isRegistering ? 'Crea tu cuenta para vivir la experiencia.' : 'Ingresa a tu cuenta para guardar tus favoritos.';
+            document.getElementById('auth-submit-btn').innerText = isRegistering ? 'Crear Cuenta' : 'Ingresar';
+            document.getElementById('auth-toggle-text').innerHTML = isRegistering 
+                ? '¿Ya tienes cuenta? <span class="text-goldDark underline">Ingresa aquí</span>' 
+                : '¿No tienes cuenta? <span class="text-goldDark underline">Regístrate aquí</span>';
+            document.getElementById('auth-error').classList.add('hidden');
+        };
+
+        window.handleAuthSubmit = (e) => {
+            e.preventDefault();
+            const email = document.getElementById('auth-email').value;
+            let name = document.getElementById('auth-name').value;
+            const errorDiv = document.getElementById('auth-error');
+            errorDiv.classList.add('hidden');
+
+            if (!name) {
+                name = email.split('@')[0];
+            }
+
+            localStorage.setItem('chicasBienUser', JSON.stringify({ name: name, email: email }));
+            checkAuthState();
+            closeLoginModal();
+            showToast(isRegistering ? "¡Bienvenida a la comunidad!" : "¡Hola de nuevo! 💕", "Sesión iniciada con éxito.");
+        };
+
+        window.handleLogout = () => {
+            localStorage.removeItem('chicasBienUser');
+            checkAuthState();
+            showToast("¡Hasta pronto!", "Has cerrado sesión correctamente.");
+        };
+
+        function checkAuthState() {
+            const user = JSON.parse(localStorage.getItem('chicasBienUser'));
+            const btnIngresar = document.getElementById('btn-ingresar');
+            const userMenu = document.getElementById('user-menu');
+            const navUserName = document.getElementById('nav-user-name');
+            const expNameInput = document.getElementById('exp-name');
+
+            if (user) {
+                btnIngresar.classList.add('hidden');
+                userMenu.classList.remove('hidden');
+                userMenu.classList.add('flex');
+                navUserName.innerText = user.name;
+                if (expNameInput) {
+                    expNameInput.value = user.name;
+                    expNameInput.setAttribute('readonly', 'true');
+                    expNameInput.classList.add('opacity-70', 'cursor-not-allowed', 'pointer-events-none');
+                }
+            } else {
+                btnIngresar.classList.remove('hidden');
+                userMenu.classList.add('hidden');
+                userMenu.classList.remove('flex');
+                if (expNameInput) {
+                    expNameInput.value = '';
+                    expNameInput.removeAttribute('readonly');
+                    expNameInput.classList.remove('opacity-70', 'cursor-not-allowed', 'pointer-events-none');
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', checkAuthState);
+    </script>
+
+    <!-- JAVASCRIPT APP LOGIC -->
+    <script>
+        let cart = [];
+        let totalExperiencesCount = 3;
+
+        const contentDatabase = [
+            { id: 'p1', title: "Pulsera 'Amor Propio' Chapa de Oro", type: "Tienda", link: "#tienda", icon: "fa-gem" },
+            { id: 'p2', title: "Anillo Ajustable 'Rose Quartz'", type: "Tienda", link: "#tienda", icon: "fa-ring" },
+            { id: 'p3', title: "Moño Aesthetic 'Coquette Pink'", type: "Tienda", link: "#tienda", icon: "fa-ribbon" },
+            { id: 'p4', title: "Collar Corazón 'Chicas Bien'", type: "Tienda", link: "#tienda", icon: "fa-gem" },
+            { id: 1, title: "El poder de un moño rosa y anillos dorados", type: "Artículo", icon: "fa-newspaper" },
+            { id: 2, title: "5 rituales para recordar lo valiosa que eres", type: "Artículo", icon: "fa-newspaper" },
+            { id: 3, title: "Pulseras compartidas: amistad indestructible", type: "Artículo", icon: "fa-newspaper" }
+        ];
+
+        const fullArticles = {
+            1: {
+                title: "El poder de un moño rosa y anillos dorados en tu look diario",
+                category: "Cafecito & Estilo",
+                date: "Lectura de 4 min • Octubre 2026",
+                img: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=1200&auto=format&fit=crop",
+                content: `<p class="mb-4">Los detalles importan. Añadir un moño rosa a tu cabello o unos delicados anillos dorados a tus manos no solo transforma tu atuendo, sino que cambia tu actitud y la energía que proyectas durante el día.</p><p class="mb-4">El estilo <em>coquette</em> y <em>aesthetic</em> ha llegado para quedarse, recordándonos que abrazar nuestra feminidad y suavidad es una fuente inmensa de poder.</p>`
+            },
+            2: {
+                title: "5 rituales para recordar lo valiosa que eres todos los días",
+                category: "Bienestar",
+                date: "Lectura de 3 min • Octubre 2026",
+                img: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1200&auto=format&fit=crop",
+                content: `<p class="mb-4">En el ajetreo diario de la escuela, el trabajo y las redes sociales, es muy fácil olvidar quiénes somos y cuánto valemos. Aquí te dejo 5 rituales sencillos que no requieren mucho dinero, solo tu intención.</p>`
+            },
+            3: {
+                title: "Pulseras compartidas: El símbolo de amistad indestructible",
+                category: "Regalos Especiales",
+                date: "Lectura de 5 min • Octubre 2026",
+                img: "https://images.unsplash.com/photo-1611591475155-4284fa289329?q=80&w=1200&auto=format&fit=crop",
+                content: `<p class="mb-4">Hay algo profundamente mágico en compartir una joya con tu mejor amiga. No importa cuántos kilómetros las separen o cuánto tiempo pasen sin verse, mirar tu muñeca y ver esa pulsera es un recordatorio de que no estás sola.</p>`
+            }
+        };
+
+        // Función interactiva de Lili
+        function saludarLili() {
+            showToast("¡Pío pío! 🐥💖", "Lili te manda un abrazo emplumado lleno de buena vibra.");
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const favButtons = document.querySelectorAll('.btn-fav');
+            let savedFavs = JSON.parse(localStorage.getItem('chicasBienFavs')) || [];
+
+            favButtons.forEach(btn => {
+                const itemId = btn.getAttribute('data-id');
+                const icon = btn.querySelector('.fav-icon');
+
+                if (savedFavs.includes(itemId)) {
+                    icon.textContent = '♥';
+                    btn.classList.add('text-pink-500');
+                }
+
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (savedFavs.includes(itemId)) {
+                        savedFavs = savedFavs.filter(id => id !== itemId);
+                        icon.textContent = '♡';
+                        btn.classList.remove('text-pink-500');
+                    } else {
+                        savedFavs.push(itemId);
+                        icon.textContent = '♥';
+                        btn.classList.add('text-pink-500');
+                        showToast('¡Favorito Guardado!', 'Añadido a tu colección personal. ✨');
+                    }
+                    localStorage.setItem('chicasBienFavs', JSON.stringify(savedFavs));
+                });
+            });
+        });
+
+        window.handleSearch = function(e) {
+            const query = e.target.value.toLowerCase().trim();
+            const resultsContainer = document.getElementById('search-results');
+            
+            if (query.length < 2) {
+                resultsContainer.classList.add('hidden');
+                return;
+            }
+
+            const results = contentDatabase.filter(item => item.title.toLowerCase().includes(query));
+            
+            if (results.length > 0) {
+                resultsContainer.innerHTML = results.map(r => `
+                    <div class="p-3 border-b border-gray-100 hover:bg-roseSoft/50 cursor-pointer flex items-center gap-3 transition-colors" 
+                         onclick="${r.type === 'Artículo' ? `openArticle(${r.id})` : `document.getElementById('search-results').classList.add('hidden'); window.location.href='${r.link}'`}">
+                        <div class="w-8 h-8 rounded-full bg-creamBg text-${r.type === 'Tienda' ? 'goldDark' : 'roseDeep'} flex items-center justify-center border border-gray-200">
+                            <i class="fa-solid ${r.icon} text-[10px]"></i>
+                        </div>
+                        <div>
+                            <span class="font-semibold text-xs text-gray-800 block">${r.title}</span>
+                            <span class="text-[9px] uppercase font-bold tracking-widest text-${r.type === 'Tienda' ? 'goldDark' : 'roseAccent'}">${r.type}</span>
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                resultsContainer.innerHTML = `
+                    <div class="p-4 text-center">
+                        <i class="fa-solid fa-face-frown text-xl text-gray-300 mb-2 block"></i>
+                        <span class="text-xs text-gray-400">No encontramos nada para "${query}"</span>
+                    </div>`;
+            }
+            resultsContainer.classList.remove('hidden');
+        };
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('#search-input') && !e.target.closest('#search-results')) {
+                const res = document.getElementById('search-results');
+                if (res) res.classList.add('hidden');
+            }
+        });
+
+        window.openArticle = function(id) {
+            const article = fullArticles[id];
+            if (!article) return;
+
+            document.getElementById('article-modal-title').innerText = article.title;
+            document.getElementById('article-modal-category').innerText = article.category;
+            document.getElementById('article-modal-date').innerText = article.date;
+            document.getElementById('article-modal-img').src = article.img;
+            document.getElementById('article-modal-content').innerHTML = article.content;
+
+            const modal = document.getElementById('article-modal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            document.getElementById('search-results').classList.add('hidden');
+        };
+
+        window.closeArticle = function() {
+            const modal = document.getElementById('article-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        };
+
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        function toggleCart() {
+            const drawer = document.getElementById('cart-drawer');
+            drawer.classList.toggle('hidden');
+        }
+
+        function addToCart(id, name, price, image) {
+            const existingItem = cart.find(item => item.id === id);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ id, name, price, image, quantity: 1 });
+            }
+            updateCartUI();
+            showToast("¡Agregado al Carrito! 💕", `${name} se añadió a tu pedido.`);
+        }
+
+        function changeQuantity(id, delta) {
+            const item = cart.find(item => item.id === id);
+            if (item) {
+                item.quantity += delta;
+                if (item.quantity <= 0) {
+                    cart = cart.filter(i => i.id !== id);
+                }
+            }
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartCount = document.getElementById('cart-count');
+            const cartSubtotal = document.getElementById('cart-subtotal');
+
+            const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.innerText = totalCount;
+
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            cartSubtotal.innerText = `$${subtotal.toFixed(2)} MXN`;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = `
+                    <div class="text-center py-12 text-gray-400">
+                        <i class="fa-solid fa-heart-crack text-4xl mb-3 text-roseAccent/40"></i>
+                        <p class="text-xs">Tu carrito está vacío por ahora.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            cartItemsContainer.innerHTML = cart.map(item => `
+                <div class="flex items-center gap-4 bg-roseSoft/40 p-3 rounded-xl border border-roseAccent/20">
+                    <img src="${item.image}" alt="${item.name}" class="w-14 h-14 object-cover rounded-lg border border-goldMetallic/30">
+                    <div class="flex-1">
+                        <h4 class="font-serif-title font-bold text-xs text-gray-800 line-clamp-1">${item.name}</h4>
+                        <span class="text-roseDeep font-bold text-xs">$${item.price} MXN</span>
+                        <div class="flex items-center gap-2 mt-1">
+                            <button onclick="changeQuantity(${item.id}, -1)" class="w-5 h-5 bg-white border border-gray-300 rounded-full text-xs font-bold flex items-center justify-center hover:bg-roseAccent hover:text-white">-</button>
+                            <span class="text-xs font-semibold px-1">${item.quantity}</span>
+                            <button onclick="changeQuantity(${item.id}, 1)" class="w-5 h-5 bg-white border border-gray-300 rounded-full text-xs font-bold flex items-center justify-center hover:bg-roseAccent hover:text-white">+</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                showToast("Carrito Vacío", "Por favor agrega accesorios antes de pagar.");
+                return;
+            }
+            showToast("¡Pedido Recibido! 🛍️", "Gracias por comprar tus accesorios en Chicas Bien.");
+            cart = [];
+            updateCartUI();
+            toggleCart();
+        }
+
+        function filterProducts(category) {
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function postExperience(e) {
+            e.preventDefault();
+            const name = document.getElementById('exp-name').value.trim();
+            const category = document.getElementById('exp-category').value;
+            const message = document.getElementById('exp-message').value.trim();
+
+            if (!name || !message) return;
+            const initials = name.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2) || 'CB';
+            const feed = document.getElementById('experiences-feed');
+
+            const postHTML = `
+                <div class="bg-white p-6 rounded-2xl border-2 border-goldMetallic/30 shadow-md transition-all">
+                    <div class="flex justify-between items-start mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-roseDeep text-white border border-goldMetallic flex items-center justify-center font-bold text-xs">
+                                ${initials}
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xs text-gray-800">${name}</h4>
+                                <span class="text-[10px] text-roseDeep font-semibold">Hace un momento</span>
+                            </div>
+                        </div>
+                        <span class="bg-roseSoft text-roseDeep text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full border border-roseAccent/30">
+                            ✨ ${category}
+                        </span>
+                    </div>
+                    <p class="text-xs text-gray-600 leading-relaxed mb-4">"${message}"</p>
+                    <div class="flex items-center justify-between border-t border-roseSoft pt-3 text-[11px] text-gray-500">
+                        <button onclick="likePost(this)" class="flex items-center gap-1.5 hover:text-roseDeep transition-colors">
+                            <i class="fa-regular fa-heart text-roseDeep"></i>
+                            <span>Me gusta (1)</span>
+                        </button>
+                        <span class="text-goldDark font-medium">#ChicasBien</span>
+                    </div>
+                </div>
+            `;
+            feed.insertAdjacentHTML('afterbegin', postHTML);
+            totalExperiencesCount++;
+            document.getElementById('exp-counter').innerText = `${totalExperiencesCount} Historias`;
+            e.target.reset();
+            showToast("¡Publicado con éxito! 💌", "Tu experiencia ya está visible para toda la comunidad.");
+        }
+
+        function likePost(button) {
+            const icon = button.querySelector('i');
+            const textSpan = button.querySelector('span');
+            if (icon.classList.contains('fa-regular')) {
+                icon.classList.remove('fa-regular');
+                icon.classList.add('fa-solid');
+                let match = textSpan.innerText.match(/\d+/);
+                let current = match ? parseInt(match[0]) : 0;
+                textSpan.innerText = `Me gusta (${current + 1})`;
+                button.classList.add('text-roseDeep');
+            } else {
+                icon.classList.remove('fa-solid');
+                icon.classList.add('fa-regular');
+                let match = textSpan.innerText.match(/\d+/);
+                let current = match ? parseInt(match[0]) : 1;
+                textSpan.innerText = `Me gusta (${Math.max(0, current - 1)})`;
+                button.classList.remove('text-roseDeep');
+            }
+        }
+
+        function openLoginModal() {
+            document.getElementById('login-modal').classList.remove('hidden');
+            document.getElementById('login-modal').classList.add('flex');
+        }
+
+        function closeLoginModal() {
+            document.getElementById('login-modal').classList.add('hidden');
+            document.getElementById('login-modal').classList.remove('flex');
+            document.getElementById('auth-email').value = '';
+            document.getElementById('auth-password').value = '';
+            document.getElementById('auth-name').value = '';
+            const errorDiv = document.getElementById('auth-error');
+            if(errorDiv) errorDiv.classList.add('hidden');
+        }
+
+        const horoscopes = {
+            'Aries': 'Hoy tu fuego interno brilla más que nunca. Usa ese anillo dorado que te empodera y sal a conquistar tus metas, reina.',
+            'Tauro': 'Es un día para el autocuidado y los placeres simples. Un cafecito helado, tu moño favorito y date tiempo para ti.',
+            'Géminis': 'Tu comunicación está on point. Hoy conectarás de forma increíble con tu bestie. Luce tus pulseras compartidas.',
+            'Cáncer': 'La luna te llena de intuición. Abraza tus emociones y no temas mostrar tu lado más dulce.',
+            'Leo': 'Eres el centro de atención natural. Deja que tu confianza sea tu mejor outfit hoy.',
+            'Virgo': 'El orden exterior refleja tu paz interior. Organiza tu vanity, elige tus piezas favoritas y fluye con el día.',
+            'Libra': 'El balance es tu superpoder. Hoy todo fluye con armonía. Tu estética está en su punto máximo.',
+            'Escorpio': 'Tienes un magnetismo irresistible hoy. Un look misterioso con toques de oro te hará sentir invencible.',
+            'Sagitario': 'La aventura te llama, aunque sea en tu propia ciudad. Ponte cómoda, añade un detalle brillante a tu look.',
+            'Capricornio': 'Tu enfoque te llevará lejos hoy. Celebra tus pequeños logros diarios con un detalle lindo para ti misma.',
+            'Acuario': 'Tu originalidad es tu mayor tesoro. Mezcla y combina accesorios como solo tú sabes hacerlo.',
+            'Piscis': 'Tu energía soñadora atrae cosas hermosas. Un cuarzo rosa o un accesorio sutil amplificará tu intuición.'
+        };
+
+        function showHoroscope(sign, icon) {
+            document.getElementById('horoscope-title').innerText = sign;
+            document.getElementById('horoscope-icon').innerText = icon;
+            document.getElementById('horoscope-text').innerText = `"${horoscopes[sign]}"`;
+            const modal = document.getElementById('horoscope-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeHoroscopeModal() {
+            const modal = document.getElementById('horoscope-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function showToast(title, msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-title').innerText = title;
+            document.getElementById('toast-msg').innerText = msg;
+            toast.classList.remove('translate-y-32', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-32', 'opacity-0');
+            }, 3500);
+        }
+    </script>
+</body>
+</html>
